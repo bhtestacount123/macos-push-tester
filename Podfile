@@ -9,6 +9,10 @@ target 'pusher' do
     pod 'PusherMainView', :path => 'PusherMainView/', :testspecs => ['PusherMainViewTests']
 end
 
+pre_install do |installer|
+  puts "=== [CocoaPods] pre_install started ==="
+end
+
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
